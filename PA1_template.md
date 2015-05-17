@@ -83,6 +83,7 @@ hist(sumSteps$steps, breaks = 25, main = "Total # of steps taken each day", xlab
 ![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
 
 ### 3. Calculate and report the mean and median of the total number of steps taken per day
+Note: Interpret this question as asking to take mean and median across all 58 days (NA excluded), i.e. 1 mean value and 1 median value for the 2 months.
 
 ```r
 mean(sumSteps$steps)
