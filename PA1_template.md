@@ -1,4 +1,9 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 
 
 ## Loading and preprocessing the data
@@ -80,7 +85,7 @@ Note: NA values in dataset are ignored, as per the default na.action in func agg
 hist(sumSteps$steps, breaks = 25, main = "Total # of steps taken each day", xlab = "Sum of steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
 
 ### 3. Calculate and report the mean and median of the total number of steps taken per day
 Note: Interpret this question as asking to take mean and median across all 58 days (NA excluded), i.e. 1 mean value and 1 median value for the 2 months.
@@ -136,7 +141,7 @@ with(., {
     })    
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
 
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -186,7 +191,7 @@ sumSteps <- aggregate(data=activity2, steps~date, FUN=sum)
 hist(sumSteps$steps, breaks = 25, main = "Total # of steps taken each day", xlab = "Sum of steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-9-1.png) 
+![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9-1.png) 
 
 Calculate and report the mean & median of total number of steps taken per day with the new dataset, activity2
 
@@ -257,7 +262,7 @@ aggregate(data=activity2, steps~interval*dayType, FUN=mean) %>%
 xyplot(steps ~ interval | dayType, data = . , layout = c(1, 2), type="l")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-14-1.png) 
+![plot of chunk unnamed-chunk-14](figure/unnamed-chunk-14-1.png) 
 
 The above plot shows differences in activity patterns between weekdays and weekend.   
 1. During weekends, mean step values were generally higher (indicating higher activity levels) from interval 500 to interval 2000.   
@@ -284,11 +289,11 @@ sessionInfo()
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] lattice_0.20-29 dplyr_0.4.1     plyr_1.8.1     
+## [1] lattice_0.20-29 dplyr_0.4.1     plyr_1.8.1      knitr_1.10     
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] assertthat_0.1   DBI_0.3.1        digest_0.6.8     evaluate_0.7    
-##  [5] grid_3.1.2       htmltools_0.2.6  knitr_1.10       magrittr_1.5    
-##  [9] parallel_3.1.2   Rcpp_0.11.5      rmarkdown_0.3.11 stringr_0.6.2   
-## [13] tools_3.1.2      yaml_2.1.13
+##  [5] grid_3.1.2       htmltools_0.2.6  magrittr_1.5     parallel_3.1.2  
+##  [9] Rcpp_0.11.5      rmarkdown_0.3.11 stringr_0.6.2    tools_3.1.2     
+## [13] yaml_2.1.13
 ```
