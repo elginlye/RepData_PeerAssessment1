@@ -114,27 +114,6 @@ median(sumSteps$steps)
 ```r
 library(plyr) 
 library(dplyr)
-```
-
-```
-## 
-## Attaching package: 'dplyr'
-## 
-## The following objects are masked from 'package:plyr':
-## 
-##     arrange, count, desc, failwith, id, mutate, rename, summarise,
-##     summarize
-## 
-## The following object is masked from 'package:stats':
-## 
-##     filter
-## 
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
-```
-
-```r
 aggregate(data=activity, steps~interval, FUN=mean) %>%
 with(., {
         plot(interval,y=steps, xlab="", ylab = "Mean of steps in interval", type="l")
@@ -193,7 +172,9 @@ hist(sumSteps$steps, breaks = 25, main = "Total # of steps taken each day", xlab
 
 ![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9-1.png) 
 
-Calculate and report the mean & median of total number of steps taken per day with the new dataset, activity2
+Calculate and report the mean & median of total number of steps taken per day with the new dataset, activity2.
+Note: Same as above, taking  mean and median across all 58 days (NA excluded), i.e. 1 mean value and 1 median value for the 2 months.
+
 
 ```r
 mean(sumSteps$steps)
@@ -245,7 +226,6 @@ sumSteps[sumSteps$date %in% NA_dates[[1]], ]
 
 3. With these 8 days included, the mean and median of the total no. of steps per day are lower than in the first part of the assignment.   
 
-
 ## Are there differences in activity patterns between weekdays and weekends?
 
 Create a new factor variable "dayType" in the "activity2" dataset with two levels – “weekday” and “weekend” indicating whether a given date is a weekday or weekend day.
@@ -293,7 +273,7 @@ sessionInfo()
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] assertthat_0.1   DBI_0.3.1        digest_0.6.8     evaluate_0.7    
-##  [5] grid_3.1.2       htmltools_0.2.6  magrittr_1.5     parallel_3.1.2  
-##  [9] Rcpp_0.11.5      rmarkdown_0.3.11 stringr_0.6.2    tools_3.1.2     
-## [13] yaml_2.1.13
+##  [5] grid_3.1.2       htmltools_0.2.6  magrittr_1.5     markdown_0.7.4  
+##  [9] mime_0.2         parallel_3.1.2   Rcpp_0.11.5      rmarkdown_0.3.11
+## [13] stringr_0.6.2    tools_3.1.2      yaml_2.1.13
 ```
