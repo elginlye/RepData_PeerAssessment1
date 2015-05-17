@@ -172,7 +172,7 @@ hist(sumSteps$steps, breaks = 25, main = "Total # of steps taken each day", xlab
 
 ![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9-1.png) 
 
-Calculate and report the mean & median of total number of steps taken per day with the new dataset, activity2.
+Calculate and report the mean & median of total number of steps taken per day with the new dataset, activity2.   
 Note: Same as above, taking  mean and median across all 58 days (NA excluded), i.e. 1 mean value and 1 median value for the 2 months.
 
 
